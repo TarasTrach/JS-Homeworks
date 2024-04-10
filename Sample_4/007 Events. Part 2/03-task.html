@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Task 03</title>
+   <style>
+      * {
+         box-sizing: border-box;
+      }
+
+      div {
+         display: inline-block;
+         width: 100px;
+         height: 100px;
+         background-color: green;
+         margin: 10px;
+      }
+   </style>
+</head>
+
+<body>
+   <div></div>
+   <div></div>
+   <div></div>
+
+   <script>
+      /*
+      Завдання:
+      Реалізуйте сценарій, який під час натискання на клавіші 1, 2 або 3 на клавіатурі додаватиме рамку
+      червоного кольору на відповідний div. Якщо затиснуто клавіші Ctrl + A, то червона рамка додається відразу
+      для всіх div.
+      */
+
+      document.addEventListener("keydown", (e) => {
+         if (e.ctrlKey && e.key == "a") {
+            document.querySelectorAll("div").forEach(div => div.style.border = "4px solid red");
+         }
+
+         switch (e.key) {
+            case "1":
+               document.querySelector("div:nth-child(1)").style.border = "4px solid red";
+               break;
+            case "2":
+               document.querySelector("div:nth-child(2)").style.border = "4px solid red";
+               break;
+            case "3":
+               document.querySelector("div:nth-child(3)").style.border = "4px solid red";
+               break;
+         }
+      });
+
+      document.addEventListener("keyup", (e) => {
+         if (e.ctrlKey && e.key == "a") {
+            document.querySelectorAll("div").forEach(div => div.style.border = "none");
+         }
+
+         switch (e.key) {
+            case "1":
+               document.querySelector("div:nth-child(1)").style.border = "none";
+               break;
+            case "2":
+               document.querySelector("div:nth-child(2)").style.border = "none";
+               break;
+            case "3":
+               document.querySelector("div:nth-child(3)").style.border = "none";
+               break;
+         }
+      });
+   </script>
+</body>
+
+</html>
