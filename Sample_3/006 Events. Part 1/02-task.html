@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Task 02</title>
+</head>
+
+<body>
+   <input type="text" id="radius"><br />
+   <input type="text" id="heigth"><br />
+   <button type="submit" id="submit">Calculate
+   </button><br />
+   <script>
+      /*
+      Завдання:
+      Напишіть сценарій, який вираховує об'єм циліндра за параметрами, які користувач вводить.
+      Для розрахунку використовуйте формулу V = π * r у квадраті * h.
+      Розмістіть на сторінці два поля введення: перше для радіуса циліндра, друге для висоти циліндра.
+      Об'єм циліндра виведіть у тіло сторінки.
+      */
+
+      let radius = document.querySelector("#radius");
+      let heigth = document.querySelector("#heigth");
+
+      const submit = document.querySelector('#submit');
+
+      let result = document.createElement('div');
+
+      function calculate(radius, heigth) {
+         return Math.PI * Math.pow(radius, 2) * heigth;
+      }
+
+      submit.addEventListener('click', () => {
+         const radiusValue = Number(radius.value);
+         const heigthValue = Number(heigth.value);
+         result.textContent = 'Result: ' + calculate(radiusValue, heigthValue);
+         document.body.appendChild(result);
+      });
+
+   </script>
+</body>
+
+</html>
