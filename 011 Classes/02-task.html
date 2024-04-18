@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Task 02</title>
+</head>
+
+<body>
+   <script>
+      /*
+      Завдання:
+      Визначте клас циліндр, який буде об'єктним представленням геометричного тіла.
+      Клас має містити конструктор.
+      Конструктор має приймати два параметри: висоту та радіус. Він має ініціалізувати відповідні властивості.
+      У класі має бути визначений метод getVolume, який має повертати значення об'єму цього циліндра.
+      Створіть два екземпляри цього класу, передавши довільні значення як параметри конструктора, і виведіть
+      на консоль значення обсягу двох екземплярів.
+      */
+
+      class Cylinder {
+         constructor(height, radius) {
+            this.height = height;
+            this.radius = radius;
+         }
+
+         getVolume() {
+            console.log(Math.PI * this.radius ** 2 * this.height);
+         }
+      }
+
+      const cyl1 = new Cylinder(3, 5);
+      const cyl2 = new Cylinder(2, 4);
+
+      cyl1.getVolume();
+      cyl2.getVolume();
+   </script>
+</body>
+
+</html>
