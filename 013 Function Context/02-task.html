@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Task 02</title>
+</head>
+
+<body>
+   <script>
+      /*
+      Завдання:
+      Створіть функцію showWithDelay (масив);
+      Метод приймає масив і на консоль по черзі виводить кожен елемент масиву з інтервалом в одну секунду.
+      Зробіть два варіанти з setInterval і setTimeout.
+      */
+
+      const array = [1, 2, 3, 4, 5, 6, 7, 8];
+      const array1 = ["a", "b", "c", "d", "e", "f", "g", "h"];
+
+      function showWithDelayInterval(array) {
+         let index = 0;
+
+         const intervalId = setInterval(() => {
+            if (index < array.length) {
+               console.log(array[index]);
+               index++;
+            } else clearInterval(intervalId);
+         }, 1000);
+      }
+
+      function showWithDelayTimeout(array) {
+         let index = 0;
+         function display() {
+            if (index < array.length) {
+               console.log(array[index]);
+               index++;
+               setTimeout(display, 1000);
+            }
+         }
+         display();
+      }
+
+      showWithDelayInterval(array);
+      showWithDelayTimeout(array1);
+   </script>
+</body>
+
+</html>
